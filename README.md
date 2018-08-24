@@ -1,4 +1,4 @@
-# Visual Search (0.9)
+# Visual Search (1.0)(Flicker)
 
 A specialised search component which generates shelf layouts on the fly given minimal input.
 - No need to pre-generate shelves
