@@ -1,6 +1,6 @@
 {
-	"name": "visual search t",
-	"description": "User searches within an image",
+	"name": "visual search flicker",
+	"description": "User searches for changed image",
 	"version": "0",
 	"start": "../../main.html",
 	"data": null,
@@ -9,9 +9,9 @@
 		"properties": {
 			"wombat_component": {
 				"enum": [
-					"visual search"
+					"visual search flicker"
 				],
-				"default": "visual search"
+				"default": "visual search flicker"
 			},
 			"iterations": {
 				"type": "number",

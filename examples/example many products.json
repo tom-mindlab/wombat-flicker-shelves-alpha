@@ -1,5 +1,5 @@
 {
-    "wombat_component": "visual search t",
+    "wombat_component": "visual search flicker",
     "iterations": 6,
     "mouseover_classes": [
         "highlight"
@@ -17,8 +17,8 @@
         "continue_at": 2
     },
     "transition_behavior": {
-        "cover_between": false,
-        "cycle_time": 2000,
+        "cover_between": true,
+        "cycle_time": 1000,
         "duration": 200,
         "transitions": {
             "blur": {
@@ -90,21 +90,6 @@
                 "min": 2,
                 "max": 5
             }
-        },
-        {
-            "name": "JustRol - All Butter",
-            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_allbutter.png"
-        },
-        {
-            "name": "JustRol - Puffblock",
-            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_puffblock.png",
-            "counts": {
-                "min": 1
-            }
-        },
-        {
-            "name": "JustRol - Puffsheet",
-            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_puffsheet.png"
         }
     ],
     "layout": [

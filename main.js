@@ -45,7 +45,6 @@ async function main($DOM, configuration, pause, pause_replacements) {
 		y: $DOM.find('.stimuli').height()
 	}
 	let rack = new ShelfRack(configuration.layout, { shelves: shelf_classes.shelves, products: configuration.product_classes }, rack_dimensions);
-	console.log(rack);
 	let click_data = [];
 
 	const specific_product = (transition_list) => {
@@ -120,12 +119,11 @@ async function main($DOM, configuration, pause, pause_replacements) {
 		}
 
 		if (configuration.repeat_behavior.rearrange === true) {
-			console.log(requested_product.split('-')[0]);
 			requested_product = $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').eq(Math.floor(Math.random() * $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').length)).attr('data-product-type');
 		}
 
 		const transition_list = new TransitionList($DOM.find('.stimuli'), $('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.transitions, configuration.transition_behavior.cycle_time, configuration.transition_behavior.duration, configuration.transition_behavior.cover_between);
-		if (transition_list.enabled_count === 0) {
+		if (transition_list.enabled_count == 0) {
 			throw new Error("No transitions defined for flicker shelves");
 		}
 
@@ -133,7 +131,8 @@ async function main($DOM, configuration, pause, pause_replacements) {
 			await pause_experiment(true, requested_product, transition_list);
 		});
 
-		const desired_product = (product_class, transition_list) => {
+		let desired_product = (product_class, transition_list) => {
+			console.warn(transition_list.enabled_count);
 			const product_name = product_class.split(`-`)[0];
 			if (transition_list.enabled_count !== 0) {
 				return `changing product`;
@@ -166,7 +165,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 
 
 		transition_list.stop();
-		transition_list.doTransitions($('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.transitions, false);
+		transition_list.doTransitions();
 
 
 

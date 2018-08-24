@@ -1,5 +1,5 @@
 {
-    "wombat_component": "visual search t",
+    "wombat_component": "visual search flicker",
     "iterations": 6,
     "mouseover_classes": [
         "highlight"
@@ -23,7 +23,7 @@
         "duration": 200,
         "transitions": {
             "blur": {
-                "enabled": false,
+                "enabled": true,
                 "amount": "0.2rem"
             },
             "opacity": {
