@@ -142,7 +142,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 		}
 
 		const request_message = 'Please click on the ' + desired_product(requested_product, transition_list);
-		await showScreen(pause, Object.assign({}, pause_replacements, { message: request_message }));
+		//await showScreen(pause, Object.assign({}, pause_replacements, { message: request_message }));
 		transition_list.start();
 
 		$instruction.text(request_message);
