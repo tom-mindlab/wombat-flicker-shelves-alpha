@@ -1,0 +1,90 @@
+{
+    "wombat_component": "visual search t",
+    "iterations": 6,
+    "mouseover_classes": [
+        "highlight"
+    ],
+    "timer": {
+        "duration": 80000,
+        "reset_duration": 300
+    },
+    "repeat_behavior": {
+        "triggers": {
+            "wrong_answer": true,
+            "timeout": true
+        },
+        "rearrange": true,
+        "new_target": false,
+        "continue_at": 2
+    },
+    "transition_behavior": {
+        "cover_between": true,
+        "cycle_time": 2000,
+        "duration": 200,
+        "transitions": {
+            "blur": {
+                "enabled": false,
+                "amount": "0.2rem"
+            },
+            "opacity": {
+                "enabled": false,
+                "amount": "80%"
+            }
+        }
+    },
+    "product_classes": [
+        {
+            "name": "Stolichnaya",
+            "path": "https://i.imgur.com/4iPEhpK.png",
+            "counts": {
+                "min": 1,
+                "max": 3
+            }
+        },
+        {
+            "name": "New Amsterdam",
+            "path": "https://i.imgur.com/cWDQzwH.png",
+            "counts": {
+                "max": 2
+            }
+        },
+        {
+            "name": "Skyy",
+            "path": "https://i.imgur.com/U0hM1Pw.png",
+            "counts": {
+                "max": 2
+            }
+        },
+        {
+            "name": "Pinnacle",
+            "path": "https://i.imgur.com/GDOPvqL.png",
+            "counts": {
+                "max": 2
+            }
+        }
+    ],
+    "layout": [
+        {
+            "name": "supermarket"
+        },
+        {
+            "name": "supermarket"
+        }
+    ],
+    "language_options": {
+        "screens": {
+            "pause": {
+                "message": "Test paused",
+                "continue_button": "Continue"
+            },
+            "intro": {
+                "message": "Low 'max' values example",
+                "continue_button": "YEET"
+            }
+        },
+        "title": {
+            "header": "Visual search",
+            "message": "Click the requested image"
+        }
+    }
+}

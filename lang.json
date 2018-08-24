@@ -1,0 +1,40 @@
+{
+	"default": {
+		"screens": {
+			"pause": {
+				"message": "NO TRANSLATION",
+				"continue_button": "NO TRANSLATION"
+			},
+			"intro": {
+				"message": "NO TRANSLATION",
+				"continue_button": "NO TRANSLATION",
+				"continue_loading_button": "NO TRANSLATION"
+			},
+			"main": {
+				"message": "NO TRANSLATION",
+				"continue_button": "NO TRANSLATION"
+			}
+		}
+	},
+	"en": {
+		"screens": {
+			"pause": {
+				"message": "Test paused",
+				"continue_button": "Continue"
+			},
+			"intro": {
+				"message": "welcome to the Commenting test",
+				"continue_button": "Start",
+				"continue_loading_button": "Loading images, please wait."
+			},
+			"main": {
+				"message": "blah",
+				"continue_button": "continue"
+			}
+		},
+		"title": {
+			"title": "Visual search",
+			"message": "Click the requested image"
+		}
+	}
+}

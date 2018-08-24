@@ -1,0 +1,142 @@
+@import '~theme';
+.visual-search-t {
+	.main {
+		.side-panels;
+
+		position: absolute;
+
+		.content {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			width: 64vw;
+			height: 50vw;
+
+			left: 2 + @panel-width;
+			top: 0;
+
+			
+		}
+
+		.instruction {
+			position: initial;
+			width: 100%;
+			
+			text-align: center;
+			margin-top: 1em;
+			font-size: 2em;
+
+			height: auto;
+			color: @primary;
+
+			display: block;
+		}
+
+		.title {
+			.header {
+				font-size: 1.5rem;
+				margin-bottom: 0.3rem;
+			}
+
+			.message {
+				font-size: 1rem;
+				filter: opacity(80%);
+			}
+		}
+
+		.trial-count {
+			font-size: 2.5rem;
+			font-weight: bold;
+			color: rgb(255, 110, 39);
+			width: 100%;
+			text-align: center;
+		}
+
+		.stimuli {
+			//position: absolute;
+
+			//width: 96-2 * @panel-width;
+			//left: 2 + @panel-width;
+
+			@stimuli_container_height: 36vw;
+			height: @stimuli_container_height;
+			width: 100%;
+			//height: 80%;
+			//top: 15%;
+
+
+			z-index: 5;
+			outline: none;
+			cursor: crosshair;
+			display: flex;
+			flex-direction: column;
+
+			.loading-stimuli {
+				width: 100%;
+				text-align: center;
+			}
+
+			.shelf {
+				width: 100%;
+				background-size: 100% 100%;
+				background-repeat: repeat-x;
+				background-position: center bottom;
+
+				
+
+				.product-container {
+					height: 100%;
+					display: flex;
+					justify-content: center;
+
+					.product {
+
+						margin-top: auto;
+						margin-bottom: 0;
+						margin-left: 1px;
+						margin-right: 1px;
+
+						
+					}
+
+					.correct {
+						filter: url('#test');
+					}
+
+					.click-overlay {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+						filter: opacity(50%);
+					}
+
+					.highlight {
+						transition: filter 25ms;
+						filter: brightness(1.2);
+					}
+
+					.clicked {
+						filter: brightness(1.2);
+					}
+
+				}
+
+				
+
+				
+			}
+		}
+
+		.click-overlay {
+			.stimuli;
+
+			z-index: 999;
+		}
+	}
+
+	.introduction {
+		.pause-screen;
+	}
+}

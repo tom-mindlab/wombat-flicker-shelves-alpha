@@ -1,0 +1,134 @@
+{
+    "wombat_component": "visual search t",
+    "iterations": 6,
+    "mouseover_classes": [
+        "highlight"
+    ],
+    "timer": {
+        "duration": 80000,
+        "reset_duration": 300
+    },
+    "repeat_behavior": {
+        "triggers": {
+            "wrong_answer": true,
+            "timeout": true
+        },
+        "rearrange": true,
+        "continue_at": 2
+    },
+    "transition_behavior": {
+        "cover_between": false,
+        "cycle_time": 2000,
+        "duration": 200,
+        "transitions": {
+            "blur": {
+                "enabled": true,
+                "amount": "0.2rem"
+            },
+            "opacity": {
+                "enabled": false,
+                "amount": "80%"
+            }
+        }
+    },
+    "product_classes": [
+        {
+            "name": "Stolichnaya",
+            "path": "https://i.imgur.com/4iPEhpK.png",
+            "counts": {
+                "min": 1,
+                "max": 3
+            }
+        },
+        {
+            "name": "New Amsterdam",
+            "path": "https://i.imgur.com/cWDQzwH.png"
+        },
+        {
+            "name": "Skyy",
+            "path": "https://i.imgur.com/U0hM1Pw.png",
+            "counts": {
+                "min": 4
+            }
+        },
+        {
+            "name": "Grey Goose",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Diageo%20-%20Ketel%20One/Bottles/Citreon/Flavoured_GreyGooseCitron.png",
+            "counts": {
+                "min": 3,
+                "max": 4
+            }
+        },
+        {
+            "name": "Smiroff Citrus",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Diageo%20-%20Ketel%20One/Bottles/Citreon/Flavoured_SmirnoffCitrus.png",
+            "counts": {
+                "min": 2,
+                "max": 5
+            }
+        },
+        {
+            "name": "Skyy Citrus",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Diageo%20-%20Ketel%20One/Bottles/Citreon/Flavoured_SkyyCitrus.png",
+            "counts": {
+                "min": 2,
+                "max": 5
+            }
+        },
+        {
+            "name": "Svedka Citrus",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Diageo%20-%20Ketel%20One/Bottles/Citreon/Flavoured_SvedkaCitrus.png",
+            "counts": {
+                "min": 2,
+                "max": 5
+            }
+        },
+        {
+            "name": "Crop Meyer Lemon",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Diageo%20-%20Ketel%20One/Bottles/Citreon/Flavoured_CropMeyerLemon.png",
+            "counts": {
+                "min": 2,
+                "max": 5
+            }
+        },
+        {
+            "name": "JustRol - All Butter",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_allbutter.png"
+        },
+        {
+            "name": "JustRol - Puffblock",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_puffblock.png",
+            "counts": {
+                "min": 1
+            }
+        },
+        {
+            "name": "JustRol - Puffsheet",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_puffsheet.png"
+        }
+    ],
+    "layout": [
+        {
+            "name": "supermarket"
+        },
+        {
+            "name": "supermarket"
+        }
+    ],
+    "language_options": {
+        "screens": {
+            "pause": {
+                "message": "Test paused",
+                "continue_button": "Continue"
+            },
+            "intro": {
+                "message": "Example double shelf, many products",
+                "continue_button": "Begin"
+            }
+        },
+        "title": {
+            "header": "Visual search",
+            "message": "Click the requested image"
+        }
+    }
+}

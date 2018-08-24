@@ -1,0 +1,132 @@
+{
+    "wombat_component": "visual search t",
+    "iterations": 6,
+    "mouseover_classes": [
+        "highlight"
+    ],
+    "timer": {
+        "duration": 900000,
+        "reset_duration": 300
+    },
+    "repeat_behavior": {
+        "triggers": {
+            "wrong_answer": true,
+            "timeout": true
+        },
+        "rearrange": true,
+        "new_target": true,
+        "continue_at": 0
+    },
+    "transition_behavior": {
+        "cover_between": true,
+        "cycle_time": 600,
+        "duration": 200,
+        "transitions": {
+            "blur": {
+                "enabled": false,
+                "amount": "0.2rem"
+            },
+            "opacity": {
+                "enabled": false,
+                "amount": "20%"
+            }
+        }
+    },
+    "product_classes": [
+        {
+            "name": "Stolichnaya",
+            "path": "https://i.imgur.com/4iPEhpK.png",
+            "counts": {
+                "min": 1,
+                "max": 3
+            }
+        },
+        {
+            "name": "New Amsterdam",
+            "path": "https://i.imgur.com/cWDQzwH.png",
+            "counts": {
+                "max": 1
+            }
+        },
+        {
+            "name": "EGGS",
+            "path": "https://i.imgur.com/rovTN99.png",
+            "counts": {
+                "min": 1
+            }
+        },
+        {
+            "name": "lesser dog",
+            "path": "https://i.imgur.com/pbNH1SO.png",
+            "counts": {
+                "min": 1
+            }
+        },
+        {
+            "name": "Skyy",
+            "path": "https://i.imgur.com/U0hM1Pw.png",
+            "counts": {
+                "max": 4
+            }
+        },
+        {
+            "name": "doggo",
+            "path": "https://i.imgur.com/8YH4Z1S.gif?1",
+            "counts": {
+                "min": 1
+            }
+        },
+        {
+            "name": "dance",
+            "path": "https://thumbs.gfycat.com/CookedForcefulFrigatebird-size_restricted.gif",
+            "counts": {
+                "min": 1
+            }
+        },
+        {
+            "name": "Pinnacle",
+            "path": "https://i.imgur.com/GDOPvqL.png",
+            "counts": {
+                "max": 6
+            }
+        },
+        {
+            "name": "wideboy",
+            "path": "https://i.imgur.com/tSVtK7s.png",
+            "counts": {
+                "min": 2
+            }
+        },
+        {
+            "name": "JustRol - All Butter",
+            "path": "https://toosuite-public-resources.s3-eu-west-1.amazonaws.com/Big%20Fixture%20-%20Jus%20Rol/Stim/M4M/jusrol_m4m_allbutter.png",
+            "counts": {
+                "max": 2
+            }
+        }
+    ],
+    "layout": [
+        {
+            "name": "supermarket"
+        },
+        {
+            "name": "supermarket"
+        }
+    ],
+    "language_options": {
+        "screens": {
+            "pause": {
+                "message": "Test paused",
+                "continue_button": "Continue"
+            },
+            "intro": {
+                "message": "AAAAAAAAAA",
+                "continue_button": "Continue"
+            }
+        },
+        "title": {
+            "header": "Visual search",
+            "message": "Click the requested image."
+        }
+    }
+}

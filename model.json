@@ -1,0 +1,224 @@
+{
+	"name": "visual search t",
+	"description": "User searches within an image",
+	"version": "0",
+	"start": "../../main.html",
+	"data": null,
+	"configuration": {
+		"type": "object",
+		"properties": {
+			"wombat_component": {
+				"enum": [
+					"visual search"
+				],
+				"default": "visual search"
+			},
+			"iterations": {
+				"type": "number",
+				"default": 1
+			},
+			"repeat_behavior": {
+				"type": "object",
+				"properties": {
+					"triggers": {
+						"type": "object",
+						"properties": {
+							"wrong_answer": {
+								"type": "boolean",
+								"default": false
+							},
+							"timeout": {
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					"rearrange": {
+						"type": "boolean",
+						"default": false
+					},
+					"new_target": {
+						"type": "boolean",
+						"default": false
+					},
+					"continue_at": {
+						"type": "boolean",
+						"default": false
+					}
+				}
+			},
+			"transition_behavior": {
+				"type": "object",
+				"properties": {
+					"cycle_time": {
+						"type": "number",
+						"default": 500
+					},
+					"duration": {
+						"type": "number",
+						"default": 100
+					},
+					"transitions": {
+						"type": "object",
+						"properties": {
+							"blur": {
+								"type": "object",
+								"properties": {
+									"amount": {
+										"type": "number",
+										"default": 0
+									}
+								}
+							},
+							"opacity": {
+								"type": "object",
+								"properties": {
+									"amount": {
+										"type": "number",
+										"default": 0
+									}
+								},
+								"description": "fuck"
+							}
+						}
+					}
+				}
+			},
+			"product_classes": {
+				"definition": {
+					"product": {
+						"required": [
+							"name",
+							"path"
+						],
+						"name": {
+							"type": "string"
+						},
+						"path": {
+							"type": "string"
+						},
+						"counts": {
+							"type": "object",
+							"properties": {
+								"min": {
+									"type": "number",
+									"default": 0
+								},
+								"max": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				},
+				"type": "array",
+				"items": {
+					"$ref": "#/configuration/product_classes/definition/product"
+				}
+			},
+			"layout": {
+				"definition": {
+					"shelf": {
+						"required": [
+							"name"
+						],
+						"properties": {
+							"name": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"type": "array",
+				"items": {
+					"$ref": "#/configuration/layout/definition/shelf"
+				}
+			},
+			"language_options": {
+				"type": "object",
+				"properties": {
+					"screens": {
+						"definition": {
+							"screen": {
+								"type": "object",
+								"required": [
+									"message",
+									"continue_button"
+								],
+								"properties": {
+									"continue_button": {
+										"type": "string"
+									},
+									"message": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"type": "object",
+						"properties": {
+							"intro": {
+								"$ref": "#/configuration/screens/definition/screen"
+							},
+							"pause": {
+								"$ref": "#/configuration/screens/definition/screen"
+							}
+						}
+					},
+					"title": {
+						"type": "object",
+						"properties": {
+							"header": {
+								"type": "string",
+								"default": "Visual search"
+							},
+							"message": {
+								"type": "string",
+								"default": "Click the requested image."
+							}
+						}
+					}
+				}
+			}
+		},
+		"default_configuration": {
+			"repeats": 2,
+			"timer_duration": 20000,
+			"randomise": true,
+			"sample": -1,
+			"delay": 3000,
+			"stimuli": [
+				{
+					"name": "A landscape",
+					"instruction": "Please click or tap on the bridge or the folly",
+					"path": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Stourhead_garden.jpg",
+					"targets": [
+						{
+							"name": "bridge",
+							"rectangle": {
+								"x1": 215,
+								"x2": 1083,
+								"y1": 447,
+								"y2": 612
+							}
+						},
+						{
+							"name": "folly",
+							"rectangle": {
+								"x1": 1163,
+								"x2": 1294,
+								"y1": 274,
+								"y2": 384
+							}
+						}
+					]
+				}
+			],
+			"language_options": {
+				"title": "Find and click",
+				"pause_message": "Have a break",
+				"pause_continue_button": "Lets get on with it!"
+			}
+		}
+	}
+}

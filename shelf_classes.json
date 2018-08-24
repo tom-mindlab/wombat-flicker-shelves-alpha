@@ -1,0 +1,12 @@
+{
+    "shelves": [
+        {
+            "name": "supermarket",
+            "bounds": {
+                "top": 1,
+                "bottom": 5
+            },
+            "path": "https://i.imgur.com/Pi8qnDh.png"
+        }
+    ]
+}
