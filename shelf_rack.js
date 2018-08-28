@@ -94,7 +94,7 @@ export class ShelfRack {
 				product.image = await loadImage(product.path);
 			}
 			if (typeof product.dimensions == "undefined") {
-				product.dimensions = await imageDimensions(product.image);
+				product.dimensions = imageDimensions(product.image);
 			}
 		}
 		// if product dimensions haven't already been resolved, do this now
@@ -122,7 +122,7 @@ export class ShelfRack {
 			return group[0].resolved_dimensions.x;
 		}
 		const groupWidth = (group) => {
-			return (group[0].image.width * group.length);
+			return ((group[0].image.width + 4) * group.length);
 		};
 
 		const remainingWidth = (shelf, used_width) => {

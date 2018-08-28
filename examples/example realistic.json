@@ -1,0 +1,111 @@
+{
+    "wombat_component": "visual search flicker",
+    "iterations": 10,
+    "mouseover_classes": [
+        "highlight"
+    ],
+    "timer": {
+        "duration": 20000,
+        "reset_duration": 300
+    },
+    "repeat_behavior": {
+        "triggers": {
+            "wrong_answer": true,
+            "timeout": true
+        },
+        "rearrange": true,
+        "new_target": true,
+        "continue_at": 0
+    },
+    "transition_behavior": {
+        "cover_between": true,
+        "cycle_time": 500,
+        "duration": 100,
+        "transitions": {
+            "blur": "0.1rem",
+            "opacity": "100%"
+        }
+    },
+    "product_classes": [
+        {
+            "name": "Stolichnaya",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/Absolut.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "New Amsterdam",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/KetelOne.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "Skyy",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/RussianStandard.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "Pinnacle",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/SmirnoffCURRENT.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "Stoli",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/Stoli.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "fin",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/Finlandia.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "grey",
+            "path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Smirnoff%20Impact%202/Resizes/GreyGoose.png",
+            "counts": {
+                "min": 3,
+                "max": 5
+            }
+        }
+    ],
+    "layout": [
+        {
+            "name": "supermarket"
+        },
+        {
+            "name": "supermarket"
+        }
+    ],
+    "language_options": {
+        "screens": {
+            "pause": {
+                "message": "Test paused",
+                "continue_button": "Continue"
+            },
+            "intro": {
+                "message": "Flicker Shelves",
+                "continue_button": "Start"
+            }
+        },
+        "title": {
+            "header": "Flicker",
+            "message": "Click the flashing image"
+        }
+    }
+}
