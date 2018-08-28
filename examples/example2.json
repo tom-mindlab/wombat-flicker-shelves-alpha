@@ -19,17 +19,11 @@
     },
     "transition_behavior": {
         "cover_between": true,
-        "cycle_time": 600,
+        "cycle_time": 1000,
         "duration": 200,
         "transitions": {
-            "blur": {
-                "enabled": false,
-                "amount": "0.2rem"
-            },
-            "opacity": {
-                "enabled": true,
-                "amount": "20%"
-            }
+            "blur": "0.2rem",
+            "opacity": "50%"
         }
     },
     "product_classes": [

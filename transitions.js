@@ -1,48 +1,15 @@
 import ldCloneDeep from 'lodash/cloneDeep'
 
-function currentFilters($DOM) {
-	if ($DOM.css(`filter`) === 'none') {
-		return '';
-	}
-	return $DOM.css(`filter`);
-}
+export class TransitionHandler {
+	constructor($rack_DOM, $target, desired_transitions, cycle_time, duration, cover) {
 
-class Blur {
-	apply($DOM, amount) {
-		$DOM.css('filter', `${currentFilters($DOM)} blur(${amount})`);
-		console.warn($DOM.css(`filter`))
-	}
-
-	unapply($DOM) {
-		$DOM.css('filter', currentFilters($DOM).replace(/blur\(.*\)/gi, ''));
-	}
-}
-
-class Opacity {
-	apply($DOM, amount) {
-		$DOM.css('filter', `${currentFilters($DOM)} opacity(${amount})`);
-	}
-
-	unapply($DOM) {
-		$DOM.css('filter', currentFilters($DOM).replace(/opacity\(.*\)/gi, ''));
-	}
-}
-
-export const available_transitions = {
-	'blur': Blur,
-	'opacity': Opacity
-};
-
-export class TransitionList {
-	constructor($DOM, $target, desired_transitions, cycle_time, duration, cover) {
-
-		this.$DOM = $DOM;
+		this.$rack_DOM = $rack_DOM;
 		this.$target = $target;
 		this.cycle_time = cycle_time;
 		this.duration = duration;
 		this.cover = cover;
-		this.desired_transitions = ldCloneDeep(desired_transitions);
 		this.apply = true;
+		this.transitions = new Map(Object.entries(desired_transitions));
 
 		this.interval_handle = undefined;
 	}
@@ -51,14 +18,8 @@ export class TransitionList {
 		this.$target = $target;
 	}
 
-	get enabled_count() {
-		let count = 0;
-		for (const properties of Object.values(this.desired_transitions)) {
-			if (properties.enabled) {
-				count++;
-			}
-		}
-		return count;
+	get transitionString() {
+		return [...this.transitions].reduce((acc, v) => `${acc} ${v[0]}(${v[1]}) `, ``);
 	}
 
 	start() {
@@ -70,23 +31,18 @@ export class TransitionList {
 	}
 
 	doTransitions() {
-		if (this.cover === true && this.enabled_count > 0) {
-			this.$DOM.hide();
+		if (this.cover === true) {
+			this.$rack_DOM.css(`filter`, `opacity(0)`);
 			setTimeout(() => {
-				this.$DOM.show();
+				this.$rack_DOM.css(`filter`, `opacity(1)`);
 			}, this.duration);
 		}
 
-		for (const [transition, properties] of Object.entries(this.desired_transitions)) {
-			if (properties.enabled === true) {
-				if (typeof available_transitions[transition] == 'function') {
-					if (this.apply) {
-						available_transitions[transition].prototype.apply(this.$target, properties.amount);
-					} else {
-						available_transitions[transition].prototype.unapply(this.$target);
-					}
-				}
-			}
+		if (this.apply) {
+			this.$target.css(`filter`, this.transitionString);
+
+		} else {
+			this.$target.css(`filter`, ``);
 		}
 		this.apply = !this.apply;
 	}

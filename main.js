@@ -9,7 +9,7 @@ import languages from './lang.json';
 import shelf_classes from './shelf_classes.json';
 import { ShelfRack } from './shelf_rack';
 import { $newLayout } from './shelf_rack';
-import { TransitionList } from './transitions';
+import { TransitionHandler } from './transitions';
 
 function onClick($element) {
 	return new Promise(function (resolve) {
@@ -121,13 +121,13 @@ async function main($DOM, configuration, pause, pause_replacements) {
 			requested_product = $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').eq(Math.floor(Math.random() * $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').length)).attr('data-product-type');
 		}
 
-		const transition_list = new TransitionList($DOM.find('.stimuli'), $('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.transitions, configuration.transition_behavior.cycle_time, configuration.transition_behavior.duration, configuration.transition_behavior.cover_between);
-		if (transition_list.enabled_count == 0) {
+		const transition_handler = new TransitionHandler($DOM.find('.stimuli'), $('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.transitions, configuration.transition_behavior.cycle_time, configuration.transition_behavior.duration, configuration.transition_behavior.cover_between);
+		if (transition_handler.enabled_count == 0) {
 			throw new Error("No transitions defined for flicker shelves");
 		}
 
 		timer.timeout(async () => {
-			await pause_experiment(true, requested_product, transition_list);
+			await pause_experiment(true, requested_product, transition_handler);
 		});
 
 		const desired_product = (product_class, transition_list) => {
@@ -139,8 +139,8 @@ async function main($DOM, configuration, pause, pause_replacements) {
 			}
 		}
 
-		const request_message = 'Please click on the ' + desired_product(requested_product, transition_list);
-		transition_list.start();
+		const request_message = `Please click on the ${desired_product(requested_product, transition_handler)}`;
+		transition_handler.start();
 
 		$instruction.text(request_message);
 		$stimuli.fadeIn(configuration.timer.reset_duration);
@@ -152,7 +152,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 				y: NaN
 			},
 			product_type: {
-				requested: (transition_list.enabled_count !== 0) ? requested_product : requested_product.split('-')[0],
+				requested: (transition_handler.enabled_count !== 0) ? requested_product : requested_product.split('-')[0],
 				clicked: null
 			},
 			time_taken: NaN
@@ -160,11 +160,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 
 		const event_info = await onClick($stimuli);
 
-
-		transition_list.stop();
-		transition_list.doTransitions();
-
-
+		transition_handler.stop();
 
 		const $target = $(event_info.target);
 		click_info.m_pos.x = event_info.pageX;
@@ -173,7 +169,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 		if (typeof click_info.product_type.clicked === 'undefined') {
 			click_info.product_type.clicked = `none`;
 		}
-		click_info.product_type.clicked = (transition_list.enabled_count !== 0) ? click_info.product_type.clicked : click_info.product_type.clicked.split('-')[0];
+		click_info.product_type.clicked = (transition_handler.enabled_count !== 0) ? click_info.product_type.clicked : click_info.product_type.clicked.split('-')[0];
 
 		timer.stop();
 		click_info.time_taken = timer.value();
@@ -196,9 +192,9 @@ async function main($DOM, configuration, pause, pause_replacements) {
 			}
 		}
 
-		await timer.resetAsync();
 		$instruction.empty();
 		$stimuli.empty();
+		await timer.resetAsync();
 	}
 
 	return click_data;
