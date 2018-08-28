@@ -21,9 +21,8 @@
         "cover_between": true,
         "cycle_time": 1000,
         "duration": 200,
-        "transitions": {
-            "blur": "0.2rem",
-            "opacity": "50%"
+        "css": {
+            "filter": "blur(0.2rem) opacity(75%)"
         }
     },
     "product_classes": [

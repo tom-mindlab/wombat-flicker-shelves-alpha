@@ -20,8 +20,10 @@
         "cover_between": true,
         "cycle_time": 1000,
         "duration": 200,
-        "transitions": {
-            "sepia": "100%"
+        "css": {
+            "transform": "rotateZ(45deg)",
+            "filter": "brightness(1.2) blur(2px)",
+            "border": "1px solid black"
         }
     },
     "product_classes": [

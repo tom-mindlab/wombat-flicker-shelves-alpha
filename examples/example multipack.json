@@ -10,8 +10,9 @@
         "cover_between": true,
         "cycle_time": 2000,
         "duration": 200,
-        "transitions": {
-            "opacity": "20%"
+        "css": {
+            "transform": "scale(1.2)",
+            "filter": "grayscale(80%)"
         }
     },
     "repeat_behavior": {

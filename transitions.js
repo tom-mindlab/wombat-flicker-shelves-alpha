@@ -1,7 +1,9 @@
-import ldCloneDeep from 'lodash/cloneDeep'
+/* global $ */
 
 export class TransitionHandler {
-	constructor($rack_DOM, $target, desired_transitions, cycle_time, duration, cover) {
+	constructor($rack_DOM, $target, transition_css, cycle_time, duration, cover) {
+
+		$('head').append(`<style>.flicker_target ${JSON.stringify(transition_css).replace(/"(.*?)"/gi, "$1").replace(/,/gi, ";")}</style>`);
 
 		this.$rack_DOM = $rack_DOM;
 		this.$target = $target;
@@ -9,17 +11,12 @@ export class TransitionHandler {
 		this.duration = duration;
 		this.cover = cover;
 		this.apply = true;
-		this.transitions = new Map(Object.entries(desired_transitions));
 
 		this.interval_handle = undefined;
 	}
 
 	setTarget($target) {
 		this.$target = $target;
-	}
-
-	get transitionString() {
-		return [...this.transitions].reduce((acc, v) => `${acc} ${v[0]}(${v[1]})`, ``);
 	}
 
 	start() {
@@ -39,10 +36,10 @@ export class TransitionHandler {
 		}
 
 		if (this.apply) {
-			this.$target.css(`filter`, this.transitionString);
+			this.$target.addClass(`flicker_target`)
 
 		} else {
-			this.$target.css(`filter`, ``);
+			this.$target.removeClass(`flicker_target`);
 		}
 		this.apply = !this.apply;
 	}

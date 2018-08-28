@@ -121,7 +121,7 @@ async function main($DOM, configuration, pause, pause_replacements) {
 			requested_product = $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').eq(Math.floor(Math.random() * $('img[data-product-type^="' + requested_product.split('-')[0] + '"]').length)).attr('data-product-type');
 		}
 
-		const transition_handler = new TransitionHandler($DOM.find('.stimuli'), $('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.transitions, configuration.transition_behavior.cycle_time, configuration.transition_behavior.duration, configuration.transition_behavior.cover_between);
+		const transition_handler = new TransitionHandler($DOM.find('.stimuli'), $('img[data-product-type="' + requested_product + '"]'), configuration.transition_behavior.css, configuration.transition_behavior.cycle_time, configuration.transition_behavior.duration, configuration.transition_behavior.cover_between);
 		if (transition_handler.enabled_count == 0) {
 			throw new Error("No transitions defined for flicker shelves");
 		}

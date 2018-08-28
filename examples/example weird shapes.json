@@ -18,8 +18,8 @@
         "cover_between": true,
         "cycle_time": 2000,
         "duration": 200,
-        "transitions": {
-            "blur": "0.5rem"
+        "css": {
+            "filter": "blur(5px)"
         }
     },
     "product_classes": [
