@@ -19,7 +19,7 @@ export class TransitionHandler {
 	}
 
 	get transitionString() {
-		return [...this.transitions].reduce((acc, v) => `${acc} ${v[0]}(${v[1]}) `, ``);
+		return [...this.transitions].reduce((acc, v) => `${acc} ${v[0]}(${v[1]})`, ``);
 	}
 
 	start() {

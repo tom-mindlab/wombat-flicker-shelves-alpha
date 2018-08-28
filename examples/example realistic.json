@@ -22,8 +22,7 @@
         "cycle_time": 500,
         "duration": 100,
         "transitions": {
-            "blur": "0.1rem",
-            "opacity": "100%"
+            "blur": "0.1rem"
         }
     },
     "product_classes": [

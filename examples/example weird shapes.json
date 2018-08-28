@@ -19,14 +19,7 @@
         "cycle_time": 2000,
         "duration": 200,
         "transitions": {
-            "blur": {
-                "enabled": true,
-                "amount": "0.2rem"
-            },
-            "opacity": {
-                "enabled": true,
-                "amount": "80%"
-            }
+            "blur": "0.5rem"
         }
     },
     "product_classes": [

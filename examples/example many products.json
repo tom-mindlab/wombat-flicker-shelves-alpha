@@ -21,14 +21,7 @@
         "cycle_time": 1000,
         "duration": 200,
         "transitions": {
-            "blur": {
-                "enabled": true,
-                "amount": "0.2rem"
-            },
-            "opacity": {
-                "enabled": false,
-                "amount": "80%"
-            }
+            "sepia": "100%"
         }
     },
     "product_classes": [
