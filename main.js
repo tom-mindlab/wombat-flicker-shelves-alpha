@@ -231,7 +231,7 @@ export default async function (configuration, callback) {
 
 	await showScreen($intro_screen, lang.screens.intro);
 
-	const meta = null;
+	const meta = {};
 	const data = await main($main, configuration, $pause_screen, lang.screens.pause);
 
 	screen.exit('fade', async function () {

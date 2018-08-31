@@ -22,7 +22,8 @@
         "cycle_time": 1000,
         "duration": 200,
         "css": {
-            "filter": "blur(0.2rem) opacity(75%)"
+            "filter": "blur(0.2rem) opacity(90%)",
+            "transform": "rotateZ(45deg) scale(1.1)"
         }
     },
     "product_classes": [
