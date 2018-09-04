@@ -18,18 +18,13 @@
         "continue_at": 2
     },
     "transition_behavior": {
-        "cover_between": true,
+        "cover_between": false,
         "cycle_time": 2000,
         "duration": 200,
-        "transitions": {
-            "blur": {
-                "enabled": true,
-                "amount": "0.2rem"
-            },
-            "opacity": {
-                "enabled": false,
-                "amount": "80%"
-            }
+        "css": {
+            "transform": "rotateZ(45deg)",
+            "filter": "brightness(1.2) blur(2px)",
+            "border": "1px solid black"
         }
     },
     "product_classes": [

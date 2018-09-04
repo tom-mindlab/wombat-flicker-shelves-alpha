@@ -21,8 +21,8 @@
         "cover_between": true,
         "cycle_time": 500,
         "duration": 100,
-        "transitions": {
-            "blur": "0.1rem"
+        "css": {
+            "transform": "rotateX(180deg)"
         }
     },
     "product_classes": [
