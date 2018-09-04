@@ -91,7 +91,9 @@ async function main($DOM, configuration, pause, pause_replacements) {
 	timer.resetDuration(configuration.timer.reset_duration);
 
 	const pause_button = controls.pause($DOM.find('.pause-button'));
-	pause_button.click(async () => pause_experiment(false, undefined));
+	pause_button.click(async () => {
+		pause_experiment(false, undefined);
+	});
 
 
 	$DOM.show();

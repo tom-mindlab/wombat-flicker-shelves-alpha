@@ -30,8 +30,9 @@
         {
             "name": "Stolichnaya",
             "path": "https://i.imgur.com/4iPEhpK.png",
+            "key_competitor": true,
             "counts": {
-                "min": 1,
+                "min": 2,
                 "max": 3
             }
         },
@@ -39,7 +40,8 @@
             "name": "New Amsterdam",
             "path": "https://i.imgur.com/cWDQzwH.png",
             "counts": {
-                "max": 1
+                "min": 3,
+                "max": 3
             }
         },
         {
@@ -59,6 +61,7 @@
         {
             "name": "Skyy",
             "path": "https://i.imgur.com/U0hM1Pw.png",
+            "key_competitor": true,
             "counts": {
                 "max": 4
             }
